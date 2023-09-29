@@ -44,7 +44,7 @@
               <li><a class="dropdown-item" href="#">Osoby Kontaktowe</a></li>
             </ul>
           </li>
-        <li class="nav-item"><a href="/includes/plans.php" class="nav-link">Subskrypcje</a></li>
+        <li class="nav-item"><a href="/plans.php" class="nav-link">Subskrypcje</a></li>
       </ul>
     </header>
   </div>

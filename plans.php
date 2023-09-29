@@ -1,8 +1,8 @@
 <?php 
 
-require 'init.php';
+require 'includes/init.php';
 
-require 'header.php';
+require 'includes/header.php';
 
 
 ?>
@@ -69,4 +69,4 @@ require 'header.php';
 
 
 
-<?php require 'footer.php'; ?>
+<?php require 'includes/footer.php'; ?>
