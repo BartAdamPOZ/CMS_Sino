@@ -39,9 +39,9 @@
               Widoki
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Klienci</a></li>
-              <li><a class="dropdown-item" href="#">Pracownicy</a></li>
-              <li><a class="dropdown-item" href="#">Osoby Kontaktowe</a></li>
+              <li><a class="dropdown-item" href="/client-view.php">Klienci</a></li>
+              <li><a class="dropdown-item" href="/employee-view.php">Pracownicy</a></li>
+              <li><a class="dropdown-item" href="/contact-persons-view.php">Osoby Kontaktowe</a></li>
             </ul>
           </li>
         <li class="nav-item"><a href="/plans.php" class="nav-link">Subskrypcje</a></li>
