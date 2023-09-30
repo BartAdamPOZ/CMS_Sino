@@ -1,14 +1,15 @@
 <?php
 
-class Company {
+class Company
+{
 
   public $id;
   public $name;
   public $address;
   public $sector;
-  public $subscriptions = [];
+  public $plan;
 
-  public $errors =[];
+  public $errors = [];
 
 
 
@@ -37,6 +38,46 @@ class Company {
             return $stmt->fetch();
 
         }
+    }
+
+    /**
+     * Insert a new company with its current property values
+     *
+     * @param object $conn Connection to the database
+     *
+     * @return boolean True if the insert was successful, false otherwise
+     */
+    public function create($conn)
+    {
+        if ($this->validate()) {
+
+            $sql = "INSERT INTO companies (name, address, sector, plan)
+                    VALUES (:name, :address, :sector, :plan)";
+
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
+            $stmt->bindValue(':address', $this->address, PDO::PARAM_STR);
+            $stmt->bindValue(':sector', $this->sector, PDO::PARAM_STR);
+            $stmt->bindValue(':plan', $this->plan, PDO::PARAM_STR);
+
+            if ($stmt->execute()) {
+                $this->id = $conn->lastInsertId();
+                return true;
+            }
+
+        } else {
+            return false;
+        }
+    }
+
+    protected function validate()
+    {
+        if ($this->name == '') {
+            $this->errors[] = 'Nazwa jest wymagana';
+        }
+
+        return empty($this->errors);
     }
 
 

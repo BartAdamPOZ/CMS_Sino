@@ -17,8 +17,6 @@ if (isset($_GET['id'])){
   die("Identyfikator klienta nie został wprowadzony.");
 }
 
-
-
 ?>
 
   <div class="container company-site">
@@ -28,9 +26,7 @@ if (isset($_GET['id'])){
         <h5>Nazwa: <?= htmlspecialchars($company -> name); ?></h5>
         <p>Adres: <?= htmlspecialchars($company -> address); ?></p>
         <p>Sektor: <?= htmlspecialchars($company -> sector); ?></p>
-        <p>Pakiet: <?= htmlspecialchars($company -> subscription); ?></p>
-      <?php else: ?>
-        <p>Brak firmy w bazie danych.</p>
+        <p>Pakiet: <?= htmlspecialchars($company -> plan); ?></p>
       <?php endif; ?>
     </div>
 

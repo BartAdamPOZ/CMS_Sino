@@ -19,7 +19,7 @@ require 'includes/header.php';
   </a>
    
   
-    <a href="new-client-form.php" class="link-body-emphasis text-decoration-none">
+    <a href="new-client.php" class="link-body-emphasis text-decoration-none">
     <div class="col-lg-4 col-sm-12 btn btn-main">
       <h3>Dodaj Klienta</h3>
     </div>

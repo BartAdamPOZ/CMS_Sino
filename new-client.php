@@ -4,16 +4,37 @@ require 'includes/init.php';
 
 $company = new Company();
 
-$subscription_ids = [];
-
 $conn = require 'includes/db.php';
 
-$subscriptions = 
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+  $company -> name = $_POST['name'];
+  $company -> address = $_POST['address'];
+  $company -> sector = $_POST['sector'];
+  $company -> plan = $_POST['plan'];
+
+
+  if ($company -> create($conn)) {
 
 
 
+    Url::redirect("/company-site.php?id={$company -> id}");
 
+  }
 
-require 'includes/header.php';
+} 
 
 ?>
+
+
+<?php  require 'includes/header.php'; ?>
+
+
+<?php  require 'includes/new-client-form.php'; ?>
+
+
+<?php  require 'includes/footer.php'; ?>
+
+
+
