@@ -11,7 +11,7 @@
 
   <h4 class="mb-3">Wprowadź dane nowego klienta</h4>
 
-  <form method="POST" id="formArticle">
+  <form method="post" id="formArticle">
 
   <div class="row g-2"> 
     <div class="col-lg-6 col-sm-12 form-group">
@@ -41,14 +41,6 @@
         Proszę wybrać plan.
       </div>
     </div>
-
-    <!-- <div class="col-lg-6 col-sm-12">
-              <label for="employee" class="form-label">Opiekun <span class="text-body-secondary">(Opcjonalne)</span></label>
-              <select class="form-select" id="employee" required="">
-                <option value="">Wybierz...</option>
-                
-              </select>
-            </div> -->
 
     <div class="col-lg-6 col-sm-12 form-group">
       <label for="sector" class="form-label">Branża <span class="text-body-secondary">(Opcjonalne)</span></label>

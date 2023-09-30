@@ -2,6 +2,8 @@
 
 require 'includes/init.php';
 
+$contactPerson = new ContactPerson();
+
 $conn = require 'includes/db.php';
 
 require 'includes/header.php';
@@ -16,6 +18,20 @@ if (isset($_GET['id'])){
 } else {
   die("Identyfikator klienta nie został wprowadzony.");
 }
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+  $contactPerson -> name = $_POST['name'];
+  $contactPerson -> email = $_POST['email'];
+  $contactPerson -> phone = $_POST['phone'];
+  $contactPerson -> company_id = $company -> getId();
+
+  if ($contactPerson -> create($conn)) {
+
+    Url::redirect("/company-site.php?id={$company -> id}");
+  }
+
+} 
 
 ?>
 
@@ -34,8 +50,30 @@ if (isset($_GET['id'])){
       <h5>Dodaj opiekuna</h5>
     </div>
 
-    <div class="item3">
+    <div class="item3 py-4">
       <h5>Dodaj nową osobę do kontaktu</h5>
+        
+      <form method="post">
+
+        <div class="form-group">
+          <label for="contact-name">Imię i Nazwisko: </label>
+          <input class="form-control" name="name" type="text" id="contact-name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-phone">Numer telefonu: </label>
+          <input class="form-control" name="phone" type="tel" id="contact-phone">
+        </div>
+
+        <div class="form-group">
+          <label for="contact-email">Email: </label>
+          <input class="form-control" name="email" type="email" id="contact-email" >
+        </div>
+        
+        <button class="w-100 btn btn-light btn-lg mt-3 " type="submit">Zapisz</button>
+
+      </form>
+
     </div>
 
     <div class="contact-table">

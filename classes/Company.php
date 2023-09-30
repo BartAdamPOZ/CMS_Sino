@@ -80,6 +80,12 @@ class Company
         return empty($this->errors);
     }
 
+    public function getId() {
+
+      return $this->id;
+      
+    }
+
 
 }
 
