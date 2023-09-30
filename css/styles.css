@@ -34,7 +34,7 @@ main {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.8fr 1fr 1fr;
   grid-template-areas: 
-  "item1 item1 item1"
+  "item1 item1 item2"
   "contact-table contact-table item2"
   "supervisor-table supervisor-table item3";
   grid-gap:1rem;
