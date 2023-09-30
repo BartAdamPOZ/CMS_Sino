@@ -6,11 +6,32 @@ $conn = require 'includes/db.php';
 
 require 'includes/header.php';
 
+if (isset($_GET['id'])){
+
+  $company = Company::getByID($conn, $_GET['id']);
+
+  if (! $company) {
+    die('Nie znaleziono klienta.');
+  }
+} else {
+  die("Identyfikator klienta nie został wprowadzony.");
+}
+
+
+
 ?>
 
-<div class="container company-site">
-  <div class="item1">
-    <h4>O firmie:</h4>
+  <div class="container company-site">
+    <div class="item1">
+    <?php if ($company): ?>
+      <h4>O firmie:</h4>
+      <h5>Nazwa: <?= htmlspecialchars($company -> name); ?></h5>
+      <p>Adres: <?= htmlspecialchars($company -> address); ?></p>
+      <p>Sektor: <?= htmlspecialchars($company -> sector); ?></p>
+      <p>Pakiet: <?= htmlspecialchars($company -> subscription); ?></p>
+    <?php else: ?>
+
+    <?php endif; ?>
   </div>
 
   <div class="item2">
