@@ -30,8 +30,8 @@
               Dodaj
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Nowy Klient</a></li>
-              <li><a class="dropdown-item" href="/new-employee.php">Nowy Pracownik</a></li>
+              <li><a class="dropdown-item" href="/new-client-form.php">Nowy Klient</a></li>
+              <li><a class="dropdown-item" href="/new-employee-form.php">Nowy Pracownik</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

@@ -14,7 +14,7 @@ require 'includes/header.php';
           <tr>
             <th style="width: 34%;"></th>
             <th style="width: 22%;">Podstawowy</th>
-            <th style="width: 22%;">Standard</th>
+            <th style="width: 22%;">Zaawansowany</th>
             <th style="width: 22%;">Premium</th>
           </tr>
         </thead>

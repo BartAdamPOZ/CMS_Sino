@@ -15,17 +15,17 @@ require 'includes/header.php';
         <form class="needs-validation" novalidate="">
 
           <div class="row g-2">
-            <div class="col-sm-6">
-              <label for="firstName" class="form-label">Imię i Nazwisko</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+            <div class="col-lg-6 col-sm-12">
+              <label for="fullname_employee" class="form-label">Imię i Nazwisko</label>
+              <input type="text" class="form-control" id="fullname_employee" placeholder="" value="" required="">
               <div class="invalid-feedback">
                 To pole jest wymagane.
               </div>
             </div>
 
-            <div class="col-md-6">
-              <label for="state" class="form-label">Stanowisko</label>
-              <select class="form-select" id="state" required="">
+            <div class="col-lg-6 col-sm-12">
+              <label for="position" class="form-label">Stanowisko</label>
+              <select class="form-select" id="position" required="">
                 <option value="">Wybierz...</option>
                 <option>Team Leader</option>
                 <option>Senior Customer Success Specialist</option>
@@ -37,15 +37,15 @@ require 'includes/header.php';
             </div>
 
             <div class="row g-2">
-            <div class="col-sm-6">
+            <div class="col-lg-6 col-sm-12">
               <label for="phone" class="form-label">Telefon <span class="text-body-secondary">(Opcjonalne)</span></label>
-              <input type="tel" class="form-control" id="firstName" placeholder="" value="" required="">
+              <input type="tel" class="form-control" id="phone" placeholder="" value="" required="">
               <div class="invalid-feedback">
                 To pole jest wymagane.
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-lg-6 col-sm-12">
               <label for="email" class="form-label">Email <span class="text-body-secondary">(Opcjonalne)</span></label>
               <input type="email" class="form-control" id="email" placeholder="you@example.com">
               <div class="invalid-feedback">
@@ -56,7 +56,7 @@ require 'includes/header.php';
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit" method="post">Zapisz</button>
+          <button class="w-50 btn btn-primary btn-lg" type="submit" method="post">Zapisz</button>
         </form>
       </div>
 
