@@ -17,8 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
   if ($company -> create($conn)) {
 
-
-
     Url::redirect("/company-site.php?id={$company -> id}");
 
   }

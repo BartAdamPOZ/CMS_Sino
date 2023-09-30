@@ -12,7 +12,7 @@ require 'includes/header.php';
 
 <div class="container main-area">
   
-  <a href="new-employee-form.php" class="link-body-emphasis text-decoration-none">
+  <a href="new-employee.php" class="link-body-emphasis text-decoration-none">
     <div class="col-lg-4 col-sm-12 btn btn-main">
       <h3>Dodaj Pracownika</h3>
     </div>
