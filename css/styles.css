@@ -29,6 +29,61 @@ main {
   justify-content: center;
 }
 
+.company-site {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.8fr 1fr 1fr;
+  grid-template-areas: 
+  "item1 item1 item1"
+  "contact-table contact-table item2"
+  "supervisor-table supervisor-table item3";
+  grid-gap:1rem;
+  border-radius: 1rem;
+
+}
+
+.item1 {
+  grid-area: item1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: antiquewhite;
+
+}
+
+.item2 {
+  grid-area: item2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: antiquewhite;
+
+}
+
+.item3 {
+  grid-area: item3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: antiquewhite;
+
+}
+
+.contact-table {
+  grid-area: contact-table;
+  display:flex;
+
+}
+
+.supervisor-table{
+  grid-area: supervisor-table;
+  display: flex;
+}
+
+.container >* {
+  border-radius: 1rem;
+}
+
 
 @media screen and (max-width: 992px){
   

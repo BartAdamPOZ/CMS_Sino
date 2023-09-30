@@ -78,7 +78,7 @@ require 'includes/header.php';
 
           <hr class="my-4">
 
-          <button class="w-50 btn btn-primary btn-lg" type="submit" method="post">Zapisz</button>
+          <button class="w-50 btn btn-light btn-lg" type="submit" method="post">Zapisz</button>
         </form>
       </div>
 
