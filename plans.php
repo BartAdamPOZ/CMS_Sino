@@ -7,6 +7,7 @@ require 'includes/header.php';
 
 ?>
 
+<div class="container plans-content">
   <h2 class="display-6 text-center mb-4">Co oferujemy?</h2>
     <div class="table-responsive">
       <table class="table text-center">
@@ -61,7 +62,7 @@ require 'includes/header.php';
         </tbody>
       </table>
     </div>
-
+</div>
 
 
 

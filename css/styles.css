@@ -22,10 +22,12 @@ main {
 
 }
 
-.pricing-table {
-  text-align: center;
-  
+.plans-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 
 @media screen and (max-width: 992px){
   
