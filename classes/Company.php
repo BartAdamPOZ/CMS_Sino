@@ -2,6 +2,16 @@
 
 class Company {
 
+  public $id;
+  public $name;
+  public $address;
+  public $sector;
+  public $subscriptions = [];
+
+  public $errors =[];
+
+
+
   /**
      * Get the company record based on the ID
      *
