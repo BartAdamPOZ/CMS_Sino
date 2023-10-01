@@ -15,9 +15,9 @@ class Database {
   public function getConn() {
 
     $db_host = "localhost";
-    $db_name = "cms_sino";
-    $db_user = "cms_sino_user";
-    $db_pass = "8YoPgC1*bW0@MRfp";
+    $db_name = "cms";
+    $db_user = "root";
+    $db_pass = "";
 
     $dsn = 'mysql:host='. $db_host . ';dbname='. $db_name . ';charset=utf8';
 
