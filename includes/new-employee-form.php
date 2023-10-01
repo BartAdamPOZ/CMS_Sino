@@ -6,7 +6,7 @@
 </ul>
 <?php endif; ?>
 
-<div class="container col-md-7 col-lg-8">
+<div class="container d-flex col-md-7 col-lg-8 " style="flex-direction:column;" >
 
         <h4 class="mb-3">Wprowadź dane nowego pracownika</h4>
 
@@ -54,6 +54,3 @@
           <button class="w-50 btn btn-primary btn-lg" type="submit" method="post">Dodaj</button>
         </form>
       </div>
-
-
-<?php require 'footer.php' ?>
