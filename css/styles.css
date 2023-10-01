@@ -72,6 +72,8 @@ main {
 .contact-table {
   grid-area: contact-table;
   display:flex;
+  flex-direction: column;
+  align-items: stretch;
 
 }
 
@@ -84,7 +86,12 @@ main {
   border-radius: 1rem;
 }
 
-
+.employee-table-area {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
 
 
 @media screen and (max-width: 992px){

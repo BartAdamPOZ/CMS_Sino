@@ -50,4 +50,16 @@ class ContactPerson {
     }
 
 
+    public static function getWithCompanyID($conn, $company)
+    {
+        $sql = "SELECT *
+                FROM contact_persons
+                WHERE company_id = $company";
+
+        $results = $conn->query($sql);
+
+        return $results->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
 }

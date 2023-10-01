@@ -36,10 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <?php  require 'includes/new-employee-form.php'; ?>
 
 
-<div class="container d-flex employee-table-area" style="flex-direction: column; align-items:center;">
-  <div>
+<div class="container employee-table-area">
+  
     <h3>Wszyscy pracownicy:</h3>
-  </div>
+  
 
   <div>
     <?php if (empty($employees)): ?>
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     <?php else :?>
 
-    <table id="employees" class="display">
+    <table id="employee-table" class="display">
       <thead>
 
         <th>Imię i nazwisko</th>

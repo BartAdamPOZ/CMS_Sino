@@ -30,59 +30,98 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     Url::redirect("/company-site.php?id={$company -> id}");
   }
-
 } 
+
+$contactPersons = ContactPerson::getWithCompanyID($conn, $company -> id);
 
 ?>
 
-  <div class="container company-site">
-    <div class="item1">
-      <?php if ($company): ?>
-        <h4>O firmie:</h4>
-        <h5>Nazwa: <?= htmlspecialchars($company -> name); ?></h5>
-        <p>Adres: <?= htmlspecialchars($company -> address); ?></p>
-        <p>Sektor: <?= htmlspecialchars($company -> sector); ?></p>
-        <p>Pakiet: <?= htmlspecialchars($company -> plan); ?></p>
-      <?php endif; ?>
+<div class="container company-site">
+  <div class="item1">
+    <?php if ($company): ?>
+    <h4>O firmie:</h4>
+    <h5>Nazwa: <?= htmlspecialchars($company -> name); ?></h5>
+    <p>Adres: <?= htmlspecialchars($company -> address); ?></p>
+    <p>Sektor: <?= htmlspecialchars($company -> sector); ?></p>
+    <p>Pakiet: <?= htmlspecialchars($company -> plan); ?></p>
+    <?php endif; ?>
+  </div>
+
+  <div class="item2">
+    <h5>Dodaj opiekuna</h5>
+  </div>
+
+  <div class="item3 py-4">
+    <h5>Dodaj nową osobę do kontaktu</h5>
+
+    <form method="post">
+
+      <div class="form-group">
+        <label for="contact-name">Imię i Nazwisko: </label>
+        <input class="form-control" name="name" type="text" id="contact-name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-phone">Numer telefonu: </label>
+        <input class="form-control" name="phone" type="tel" id="contact-phone">
+      </div>
+
+      <div class="form-group">
+        <label for="contact-email">Email: </label>
+        <input class="form-control" name="email" type="email" id="contact-email">
+      </div>
+
+      <button class="w-100 btn btn-light btn-lg mt-3 " type="submit">Zapisz</button>
+
+    </form>
+
+  </div>
+
+  <div class="contact-table">
+    <h5>Tabela z osobami do kontaktu</h5>
+
+    <div>
+      <?php if (empty($contactPersons)): ?>
+
+      Nie odnaleziono osób kontaktowych.
+
+      <?php else :?>
+
+      <table id="contact-persons" class="display">
+        <thead>
+
+          <th>Imię i nazwisko</th>
+          <th>Email</th>
+          <th>Telefon</th>
+          
+
+        </thead>
+        <tbody>
+          <?php foreach ($contactPersons as $contactPerson):?>
+          <tr>
+            <td>
+              <?= htmlspecialchars($contactPerson['name']);?>
+            </td>
+            <td>
+              <?= htmlspecialchars($contactPerson['email']);?>
+            </td>
+            <td>
+              <?= htmlspecialchars($contactPerson['phone']);?>
+            </td>
+          </tr>
+          <?php endforeach;?>
+
+
+        </tbody>
+      </table>
+      <?php endif;?>
     </div>
 
-    <div class="item2">
-      <h5>Dodaj opiekuna</h5>
-    </div>
+  </div>
 
-    <div class="item3 py-4">
-      <h5>Dodaj nową osobę do kontaktu</h5>
-        
-      <form method="post">
-
-        <div class="form-group">
-          <label for="contact-name">Imię i Nazwisko: </label>
-          <input class="form-control" name="name" type="text" id="contact-name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="contact-phone">Numer telefonu: </label>
-          <input class="form-control" name="phone" type="tel" id="contact-phone">
-        </div>
-
-        <div class="form-group">
-          <label for="contact-email">Email: </label>
-          <input class="form-control" name="email" type="email" id="contact-email" >
-        </div>
-        
-        <button class="w-100 btn btn-light btn-lg mt-3 " type="submit">Zapisz</button>
-
-      </form>
-
-    </div>
-
-    <div class="contact-table">
-      <h5>Tabela z osobami do kontaktu</h5>
-    </div>
-
-    <div class="supervisor-table">
-      <h5>Tabela z opiekunami</h5>
-    </div>
+  <div class="supervisor-table">
+    <h5>Tabela z opiekunami</h5>
+  </div>
 
 
 
