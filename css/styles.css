@@ -1,5 +1,5 @@
 main {
-  height:80vh;
+  height: 80vh;
   display: flex;
   min-height: 600px;
 }
@@ -12,13 +12,13 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  
+
 }
 
 .btn-main {
   padding: 50px 0 50px 0;
-  background-color: #0d6dfd63;
-  
+  background-color: rgba(167, 167, 167, 0.169);
+
   width: 500px;
 
 }
@@ -30,14 +30,14 @@ main {
 }
 
 .company-site {
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.8fr 1fr 1fr;
-  grid-template-areas: 
-  "item1 item1 item3"
-  "contact-table contact-table item3"
-  "supervisor-table supervisor-table item2";
-  grid-gap:1rem;
+  grid-template-areas:
+      "item1 item1 item3"
+      "contact-table contact-table item3"
+      "supervisor-table supervisor-table item2";
+  grid-gap: 1rem;
   border-radius: 1rem;
 
 }
@@ -47,7 +47,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: antiquewhite;
+  background-color: rgba(167, 167, 167, 0.169);
 
 }
 
@@ -56,7 +56,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: antiquewhite;
+  background-color: rgba(167, 167, 167, 0.169);
 
 }
 
@@ -65,25 +65,25 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: antiquewhite;
+  background-color: rgba(167, 167, 167, 0.169);
 
 }
 
 .contact-table {
   grid-area: contact-table;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: stretch;
 
 }
 
-.supervisor-table{
+.supervisor-table {
   grid-area: supervisor-table;
   flex-direction: column;
   align-items: stretch;
 }
 
-.container >* {
+.container>* {
   border-radius: 1rem;
 }
 
@@ -95,10 +95,10 @@ main {
 }
 
 
-@media screen and (max-width: 992px){
-  
-.btn-main {
-  width: 250px;
-}
+@media screen and (max-width: 992px) {
+
+  .btn-main {
+      width: 250px;
+  }
 
 }

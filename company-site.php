@@ -36,22 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-  // $contactPerson -> name = $_POST['name'];
-  // $contactPerson -> email = $_POST['email'];
-  // $contactPerson -> phone = $_POST['phone'];
-  // $contactPerson -> company_id = $company -> getId();
-
-  // if ($contactPerson -> create($conn)) {
-
-  //   Url::redirect("/company-site.php?id={$company -> id}");
-  // }
+   
 } 
 
 $contactPersons = ContactPerson::getWithCompanyID($conn, $company -> id);
 
-$employee_ids = array_column($company -> getSupervisors($conn), 'id');
+// $employee_ids = array_column($company -> getSupervisors($conn), 'id');
 
-$employeesAll = Employee::getAll($conn);
+ $employeesAll = Employee::getAll($conn);
 
 $employees = Employee::getByCompanyID($conn, $company -> id);
 
@@ -73,9 +65,9 @@ $employees = Employee::getByCompanyID($conn, $company -> id);
     <form method="post">
       <select name="supervisor" class="form-select" id="supervisor" required="">
         <option value="">Wybierz...</option>
-        <?php foreach ($employeesAll as $employee) : ?>
+          <?php foreach ($employeesAll as $employee) : ?>
         <option value="<?= $employee['id']?>" id="employee<?= $employee['id']?>"
-          <?php if (in_array($employee['id'], $employee_ids)): ?> hidden <?php endif; ?>>
+          >
           <?= htmlspecialchars($employee['name']) ?></option>
 
 
