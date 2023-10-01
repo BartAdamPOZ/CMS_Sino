@@ -40,22 +40,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   </div>
 
   <div>
-    <table id="myTable" class="display">
+    <table id="employees" class="display">
       <thead>
-        <tr>
+        
           <th>Column 1</th>
           <th>Column 2</th>
-        </tr>
+          <th>Column 3</th>
+        
       </thead>
       <tbody>
-        <tr>
-          <td>Row 1 Data 1</td>
-          <td>Row 1 Data 2</td>
-        </tr>
-        <tr>
-          <td>Row 2 Data 1</td>
-          <td>Row 2 Data 2</td>
-        </tr>
+      
       </tbody>
     </table>
   </div>

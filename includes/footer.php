@@ -1,11 +1,15 @@
 
     </main>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
   crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
-  <script src="/js/script.js"></script>
+
+  <script type="text/javascript" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+  
+  <script type="text/javascript" src="/js/script.js"></script>
 </body>
 
 <div class="container">
