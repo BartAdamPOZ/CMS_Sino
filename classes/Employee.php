@@ -86,6 +86,24 @@ class Employee
       
     }
 
+    /**
+     * Get all the employees
+     *
+     * @param object $conn Connection to the database
+     *
+     * @return array An associative array of all the employee records
+     */
+    public static function getAll($conn)
+    {
+        $sql = "SELECT *
+                FROM employees
+                ORDER BY name;";
+
+        $results = $conn->query($sql);
+
+        return $results->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 
 }
 
