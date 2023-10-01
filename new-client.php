@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       <tbody>
         <?php foreach ($companies as $company): ?>
           <td>
-            <?= htmlspecialchars($company['name']);?>
+            <a href="company-site.php?id=<?= $company['id']?>" style="text-decoration:none; color:black; "><?= htmlspecialchars($company['name']);?></a>
           </td>
           <td>
             <?= htmlspecialchars($company['address']);?>
