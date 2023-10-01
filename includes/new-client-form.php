@@ -69,8 +69,10 @@
       </select>
     </div>
 
-    <hr class="my-4">
+    
 
-    <button class="w-50 btn btn-light btn-lg" type="submit">Zapisz</button>
+    <button class="btn btn-primary btn-lg" style="align-items: center;" type="submit">Zapisz</button>
+
+    <hr class="my-4">
   </form>
 </div>

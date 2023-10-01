@@ -86,6 +86,17 @@ class Company
       
     }
 
+    public static function getAll($conn)
+    {
+        $sql = "SELECT *
+                FROM companies
+                ORDER BY name;";
+
+        $results = $conn->query($sql);
+
+        return $results->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 
 }
 
