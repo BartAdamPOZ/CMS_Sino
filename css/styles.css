@@ -79,7 +79,8 @@ main {
 
 .supervisor-table{
   grid-area: supervisor-table;
-  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .container >* {

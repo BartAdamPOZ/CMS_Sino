@@ -36,15 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-  $contactPerson -> name = $_POST['name'];
-  $contactPerson -> email = $_POST['email'];
-  $contactPerson -> phone = $_POST['phone'];
-  $contactPerson -> company_id = $company -> getId();
+  // $contactPerson -> name = $_POST['name'];
+  // $contactPerson -> email = $_POST['email'];
+  // $contactPerson -> phone = $_POST['phone'];
+  // $contactPerson -> company_id = $company -> getId();
 
-  if ($contactPerson -> create($conn)) {
+  // if ($contactPerson -> create($conn)) {
 
-    Url::redirect("/company-site.php?id={$company -> id}");
-  }
+  //   Url::redirect("/company-site.php?id={$company -> id}");
+  // }
 } 
 
 $contactPersons = ContactPerson::getWithCompanyID($conn, $company -> id);
@@ -125,16 +125,14 @@ $employees = Employee::getByCompanyID($conn, $company -> id);
       <?php else :?>
 
       <table id="contact-persons" class="display">
-        <thead>
-
+      <thead>
           <th>Imię i nazwisko</th>
           <th>Email</th>
           <th>Telefon</th>
 
-
         </thead>
         <tbody>
-          <?php foreach ($contactPersons as $contactPerson):?>
+          <?php foreach ($contactPersons as $contactPerson): ?>
           <tr>
             <td>
               <?= htmlspecialchars($contactPerson['name']);?>
@@ -151,6 +149,8 @@ $employees = Employee::getByCompanyID($conn, $company -> id);
 
         </tbody>
       </table>
+
+      
       <?php endif;?>
     </div>
 
@@ -197,14 +197,6 @@ $employees = Employee::getByCompanyID($conn, $company -> id);
       <?php endif;?>
     </div>
   </div>
-
-
-
-
-
-
-
-
 
 </div>
 
