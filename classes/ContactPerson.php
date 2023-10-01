@@ -50,11 +50,11 @@ class ContactPerson {
     }
 
 
-    public static function getWithCompanyID($conn, $company)
+    public static function getWithCompanyID($conn, $companyID)
     {
         $sql = "SELECT *
                 FROM contact_persons
-                WHERE company_id = $company";
+                WHERE company_id = $companyID";
 
         $results = $conn->query($sql);
 

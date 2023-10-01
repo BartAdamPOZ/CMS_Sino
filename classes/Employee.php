@@ -104,6 +104,20 @@ class Employee
         return $results->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public static function getByCompanyID($conn, $companyID)
+    {
+        $sql = "SELECT employees.*
+                FROM companies
+                JOIN com_empl
+                ON companies.id = com_empl.company_id
+                JOIN employees
+                ON com_empl.employee_id = employees.id
+                WHERE companies.id = $companyID;";
+
+        $results = $conn->query($sql);
+
+        return $results->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }
 

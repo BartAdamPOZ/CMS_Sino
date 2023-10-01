@@ -97,6 +97,43 @@ class Company
         return $results->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getSupervisors($conn)
+    {
+        $sql = "SELECT name
+                FROM employees
+                JOIN com_empl
+                ON employees.id = com_empl.employee_id
+                WHERE company_id = :id";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function getWithEmployees($conn, $id)
+    {
+        $sql = "SELECT article.*, category.name AS category_name
+                FROM article
+                LEFT JOIN article_category
+                ON article.id = article_category.article_id
+                LEFT JOIN category
+                ON article_category.category_id = category.id
+                WHERE article.id = :id";
+
+        if($only_published) {
+          $sql .= " AND article.published_at IS NOT NULL";
+        }
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }
 

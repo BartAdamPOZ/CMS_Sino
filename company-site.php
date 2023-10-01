@@ -4,6 +4,8 @@ require 'includes/init.php';
 
 $contactPerson = new ContactPerson();
 
+$employee = new Employee();
+
 $conn = require 'includes/db.php';
 
 require 'includes/header.php';
@@ -18,6 +20,19 @@ if (isset($_GET['id'])){
 } else {
   die("Identyfikator klienta nie został wprowadzony.");
 }
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {    
+
+  $contactPerson -> name = $_POST['name'];
+  $contactPerson -> email = $_POST['email'];
+  $contactPerson -> phone = $_POST['phone'];
+  $contactPerson -> company_id = $company -> getId();
+
+  if ($contactPerson -> create($conn)) {
+
+    Url::redirect("/company-site.php?id={$company -> id}");
+  }
+} 
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -34,6 +49,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 $contactPersons = ContactPerson::getWithCompanyID($conn, $company -> id);
 
+$employee_ids = array_column($company -> getSupervisors($conn), 'id');
+
+$employeesAll = Employee::getAll($conn);
+
+$employees = Employee::getByCompanyID($conn, $company -> id);
+
 ?>
 
 <div class="container company-site">
@@ -49,6 +70,22 @@ $contactPersons = ContactPerson::getWithCompanyID($conn, $company -> id);
 
   <div class="item2">
     <h5>Dodaj opiekuna</h5>
+    <form method="post">
+      <select name="supervisor" class="form-select" id="supervisor" required="">
+        <option value="">Wybierz...</option>
+        <?php foreach ($employeesAll as $employee) : ?>
+        <option value="<?= $employee['id']?>" id="employee<?= $employee['id']?>"
+          <?php if (in_array($employee['id'], $employee_ids)): ?> hidden <?php endif; ?>>
+          <?= htmlspecialchars($employee['name']) ?></option>
+
+
+
+
+        <?php endforeach; ?>
+      </select>
+
+      <button class="btn btn-sm btn-primary">Dodaj</button>
+    </form>
   </div>
 
   <div class="item3 py-4">
@@ -93,7 +130,7 @@ $contactPersons = ContactPerson::getWithCompanyID($conn, $company -> id);
           <th>Imię i nazwisko</th>
           <th>Email</th>
           <th>Telefon</th>
-          
+
 
         </thead>
         <tbody>
@@ -121,6 +158,44 @@ $contactPersons = ContactPerson::getWithCompanyID($conn, $company -> id);
 
   <div class="supervisor-table">
     <h5>Tabela z opiekunami</h5>
+
+    <div>
+      <?php if (empty($employees)): ?>
+
+      Brak opiekunów.
+
+      <?php else : ?>
+
+      <table id="supervisors" class="display">
+        <thead>
+          <th>Imię i nazwisko</th>
+          <th>Email</th>
+          <th>Telefon</th>
+          <th>Stanowisko</th>
+        </thead>
+        <tbody>
+          <?php foreach ($employees as $employee): ?>
+          <tr>
+            <td>
+              <?= htmlspecialchars($employee['name']);?>
+            </td>
+            <td>
+              <?= htmlspecialchars($employee['email']);?>
+            </td>
+            <td>
+              <?= htmlspecialchars($employee['phone']);?>
+            </td>
+            <td>
+              <?= htmlspecialchars($employee['position']);?>
+            </td>
+          </tr>
+          <?php endforeach;?>
+
+
+        </tbody>
+      </table>
+      <?php endif;?>
+    </div>
   </div>
 
 
