@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2023 at 11:45 PM
+-- Generation Time: Oct 02, 2023 at 07:05 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -51,7 +51,8 @@ INSERT INTO `contact_persons` (`id`, `name`, `email`, `phone`, `company_id`) VAL
 (11, 'Mateusz Konar', 'm.konar@gmail.com', 603222548, 2),
 (12, 'Robert Janowski', 'r.jan@gmail.com', 603558995, 3),
 (14, 'Julian Tuwim', 'j.tuwim@gmail.com', 999888777, 1),
-(16, 'Jan Łoś', 'j.los@gmail.com', 507332912, 8);
+(16, 'Jan Łoś', 'j.los@gmail.com', 507332912, 8),
+(17, 'Arkadiusz Milik', 'a.milik@gmail.com', 603602606, 6);
 
 --
 -- Indexes for dumped tables
@@ -73,7 +74,7 @@ ALTER TABLE `contact_persons`
 -- AUTO_INCREMENT for table `contact_persons`
 --
 ALTER TABLE `contact_persons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

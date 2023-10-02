@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2023 at 11:45 PM
+-- Generation Time: Oct 02, 2023 at 07:05 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -47,7 +47,9 @@ INSERT INTO `employees` (`id`, `name`, `email`, `phone`, `position`) VALUES
 (5, 'Damian Woś', 'd.wos@gmail.com', 509417503, 'Senior Customer Success Specialist'),
 (6, 'Szczepan Domagała', 's.domagala@wp.pl', 512806807, 'Senior Customer Success Specialist'),
 (7, 'Artur Nowak', 'a.nowak@wp.pl', 603989231, 'Customer Success Specialist'),
-(8, 'Karolina Bryndza', 'k.bryndza@gmail.com', 723191723, 'Customer Success Specialist');
+(8, 'Karolina Bryndza', 'k.bryndza@gmail.com', 723191723, 'Customer Success Specialist'),
+(14, 'Paweł Nowak', 'p.nowak@gmail.com', 512563465, 'Senior Customer Success Specialist'),
+(15, 'Adam Żabka', '', 0, '');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +69,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

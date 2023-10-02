@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2023 at 11:45 PM
+-- Generation Time: Oct 02, 2023 at 07:04 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,14 +41,20 @@ INSERT INTO `com_empl` (`company_id`, `employee_id`) VALUES
 (1, 5),
 (2, 2),
 (3, 1),
+(3, 5),
+(3, 6),
 (4, 2),
 (4, 6),
 (4, 7),
 (5, 6),
+(6, 1),
+(6, 2),
+(6, 4),
 (6, 8),
 (7, 1),
 (8, 1),
-(8, 5);
+(8, 5),
+(8, 14);
 
 --
 -- Indexes for dumped tables
