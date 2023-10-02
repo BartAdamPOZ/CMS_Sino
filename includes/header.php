@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    
 
 
 
@@ -48,7 +48,7 @@
                         Widoki
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/client-view.php">Klienci</a></li>
+                        <li><a class="dropdown-item" href="company-oriented-view.php">Klienci</a></li>
                         <li><a class="dropdown-item" href="/employee-view.php">Pracownicy</a></li>
                         <li><a class="dropdown-item" href="/contact-persons-view.php">Osoby Kontaktowe</a></li>
                     </ul>

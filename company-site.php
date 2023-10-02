@@ -110,7 +110,7 @@ $companyData = Company::getWithSupervisorsAndContactPersons($conn);
 
   </div>
 
-  <div class="contact-table">
+  <div class="contact-table table-responsive">
     <h5>Tabela z osobami do kontaktu</h5>
 
     <div>
@@ -152,7 +152,7 @@ $companyData = Company::getWithSupervisorsAndContactPersons($conn);
 
   </div>
 
-  <div class="supervisor-table">
+  <div class="supervisor-table table-responsive">
     <h5>Tabela z opiekunami</h5>
 
     <div>

@@ -102,3 +102,19 @@ main {
   }
 
 }
+@media screen and (max-width: 768px) {
+  #company-oriented-table thead {
+      display: none; 
+  }
+
+  #company-oriented-table td {
+      display: block; 
+  }
+
+  #company-oriented-table td::before {
+      content: attr(data-label); 
+      font-weight: bold;
+      display: inline-block;
+      width: 50%; 
+  }
+}

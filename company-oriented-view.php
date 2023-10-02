@@ -10,16 +10,24 @@ require 'includes/header.php';
 
 <?php $companiesData = Company::getWithSupervisorsAndContactPersons($conn); ?>
 
-<div class="container">
-<table id="client-oriented-table" class="display">
+<div class="container table-responsive">
+
+<?php if (empty($companiesData)): ?>
+
+  Brak firm. 
+
+<?php else :?>
+
+
+<table id="company-oriented-table">
   <thead>
 
     <th>Nazwa</th>
     <th>Adres</th>
-    <th>Branża</th>
+    <th>Opiekunowie</th>
     <th>Plan</th>
     <th>Osoby kontaktowe</th>
-    <th>Opiekunowie</th>
+    <th>Branża</th>
 
   </thead>
   <tbody>
@@ -32,7 +40,7 @@ require 'includes/header.php';
         <?= htmlspecialchars($companyData['address']);?>
       </td>
       <td>
-        <?= htmlspecialchars($companyData['sector']);?>
+        <?= htmlspecialchars($companyData['employees_info']);?>
       </td>
       <td>
         <?= htmlspecialchars($companyData['plan']);?>
@@ -41,14 +49,15 @@ require 'includes/header.php';
         <?= htmlspecialchars($companyData['contact_person_info']);?>
       </td>
       <td>
-        <?= htmlspecialchars($companyData['employees_info']);?>
+        
+        <?= htmlspecialchars($companyData['sector']);?>
       </td>
     </tr>
     <?php endforeach;?>
 
-
   </tbody>
 </table>
+<?php endif;?>
 </div>
 
 

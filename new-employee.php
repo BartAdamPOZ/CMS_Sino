@@ -36,12 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <?php  require 'includes/new-employee-form.php'; ?>
 
 
-<div class="container employee-table-area">
+<div class="container table-responsive">
   
     <h3>Wszyscy pracownicy:</h3>
   
-
-  <div>
     <?php if (empty($employees)): ?>
 
     Nie odnaleziono pracowników.
@@ -79,7 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       </tbody>
     </table>
     <?php endif;?>
-  </div>
 </div>
 
 
