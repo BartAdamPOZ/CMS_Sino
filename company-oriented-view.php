@@ -19,7 +19,7 @@ require 'includes/header.php';
 <?php else :?>
 
 
-<table id="company-oriented-table">
+<table class="display" id="company-oriented-table">
   <thead>
 
     <th>Nazwa</th>
@@ -34,7 +34,8 @@ require 'includes/header.php';
     <?php foreach ($companiesData as $companyData):?>
     <tr>
       <td>
-        <?= htmlspecialchars($companyData['name']);?>
+      <a href="company-site.php?id=<?= $companyData['id']?>"
+          style="text-decoration:none; color:black; "><?= htmlspecialchars($companyData['name']);?></a>
       </td>
       <td>
         <?= htmlspecialchars($companyData['address']);?>

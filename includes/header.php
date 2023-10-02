@@ -49,8 +49,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="company-oriented-view.php">Klienci</a></li>
-                        <li><a class="dropdown-item" href="/employee-view.php">Pracownicy</a></li>
-                        <li><a class="dropdown-item" href="/contact-persons-view.php">Osoby Kontaktowe</a></li>
+                        <li><a class="dropdown-item" href="employee-oriented-view.php">Pracownicy</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="/plans.php" class="nav-link">Subskrypcje</a></li>

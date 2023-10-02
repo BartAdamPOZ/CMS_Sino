@@ -25,7 +25,7 @@ require 'includes/header.php';
     </div>
   </a>
    
-  <a href="client-view.php" class="link-body-emphasis text-decoration-none">
+  <a href="company-oriented-view.php" class="link-body-emphasis text-decoration-none">
     <div class="col-lg-4 col-sm-12 btn btn-main">
       <h3>Przeglądaj</h3>
     </div>

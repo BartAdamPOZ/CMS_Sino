@@ -119,5 +119,23 @@ class Employee
         return $results->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public static function getWithCompanies($conn){
+
+        $sql = "SELECT employees.*,
+                GROUP_CONCAT(companies.name SEPARATOR ' || ') AS companies_info
+                FROM employees
+                JOIN com_empl
+                ON employees.id = com_empl.employee_id
+                JOIN companies
+                ON com_empl.company_id = companies.id
+                GROUP BY employees.id;" ;
+        
+        $stmt = $conn->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
 
