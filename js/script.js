@@ -3,5 +3,6 @@ $(document).ready(function() {
   $('#contact-persons').DataTable();
   $('#companies-all').DataTable();
   $('#supervisors').DataTable();
+  $('#client-oriented-table').DataTable();
   
 });
