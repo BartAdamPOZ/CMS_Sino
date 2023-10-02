@@ -113,27 +113,23 @@ class Company
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public static function getWithEmployees($conn, $id)
+    public function setSupervisor($conn, $id)
     {
-        $sql = "SELECT article.*, category.name AS category_name
-                FROM article
-                LEFT JOIN article_category
-                ON article.id = article_category.article_id
-                LEFT JOIN category
-                ON article_category.category_id = category.id
-                WHERE article.id = :id";
+        $sql = "INSERT IGNORE INTO com_empl (company_id, employee_id)
+                    VALUES (:company_id, :employee_id)";
 
-        if($only_published) {
-          $sql .= " AND article.published_at IS NOT NULL";
-        }
+            $stmt = $conn->prepare($sql);
 
-        $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            $stmt->bindValue(':company_id', $this->id, PDO::PARAM_INT);
+            $stmt->bindValue(':employee_id', $id, PDO::PARAM_INT);
 
-        $stmt->execute();
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $stmt->execute();
+                
+        
+
     }
 
-}
 
+
+}

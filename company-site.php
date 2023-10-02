@@ -14,6 +14,7 @@ if (isset($_GET['id'])){
 
   $company = Company::getByID($conn, $_GET['id']);
 
+
   if (! $company) {
     die('Nie znaleziono klienta.');
   }
@@ -23,27 +24,32 @@ if (isset($_GET['id'])){
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {    
 
-  $contactPerson -> name = $_POST['name'];
-  $contactPerson -> email = $_POST['email'];
-  $contactPerson -> phone = $_POST['phone'];
-  $contactPerson -> company_id = $company -> getId();
+  if(isset($_POST['name'])){
 
-  if ($contactPerson -> create($conn)) {
+    $contactPerson -> name = $_POST['name'];
+    $contactPerson -> email = $_POST['email'];
+    $contactPerson -> phone = $_POST['phone'];
+    $contactPerson -> company_id = $company -> getId();
+
+    
+    if ($contactPerson -> create($conn)) {
+
+      Url::redirect("/company-site.php?id={$company -> id}");
+    }
+  } elseif (isset($_POST['supervisor'])){
+
+    $company -> setSupervisor($conn, $_POST['supervisor']);
 
     Url::redirect("/company-site.php?id={$company -> id}");
+
   }
-} 
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-
-   
 } 
+ 
 
 $contactPersons = ContactPerson::getWithCompanyID($conn, $company -> id);
 
-// $employee_ids = array_column($company -> getSupervisors($conn), 'id');
-
- $employeesAll = Employee::getAll($conn);
+$employeesAll = Employee::getAll($conn);
 
 $employees = Employee::getByCompanyID($conn, $company -> id);
 
@@ -66,13 +72,8 @@ $employees = Employee::getByCompanyID($conn, $company -> id);
       <select name="supervisor" class="form-select" id="supervisor" required="">
         <option value="">Wybierz...</option>
           <?php foreach ($employeesAll as $employee) : ?>
-        <option value="<?= $employee['id']?>" id="employee<?= $employee['id']?>"
-          >
+        <option value="<?= $employee['id']?>" id="employee<?= $employee['id']?>">
           <?= htmlspecialchars($employee['name']) ?></option>
-
-
-
-
         <?php endforeach; ?>
       </select>
 
