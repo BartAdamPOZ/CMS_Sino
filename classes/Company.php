@@ -125,9 +125,28 @@ class Company
 
 
             $stmt->execute();
-                
-        
 
+    }
+
+    public static function getWithSupervisorsAndContactPersons($conn){
+
+        $sql = "SELECT companies.*,
+                GROUP_CONCAT(DISTINCT employees.name SEPARATOR ', ') AS employees_info,
+                GROUP_CONCAT(DISTINCT contact_persons.name SEPARATOR ', ') AS contact_person_info
+                FROM companies
+                JOIN com_empl
+                ON companies.id = com_empl.company_id
+                JOIN employees
+                ON com_empl.employee_id = employees.id
+                LEFT JOIN contact_persons
+                ON companies.id = contact_persons.company_id
+                GROUP BY companies.id;" ;
+        
+        $stmt = $conn->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
 

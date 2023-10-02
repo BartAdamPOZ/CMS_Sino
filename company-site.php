@@ -53,6 +53,9 @@ $employeesAll = Employee::getAll($conn);
 
 $employees = Employee::getByCompanyID($conn, $company -> id);
 
+$companyData = Company::getWithSupervisorsAndContactPersons($conn);
+
+
 ?>
 
 <div class="container company-site">
