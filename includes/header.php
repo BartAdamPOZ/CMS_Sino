@@ -26,39 +26,39 @@
 <body>
 
   <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-4 mb-4 border-bottom">
+    <header class="d-flex flex-wrap justify-content-center py-4 mb-4">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <svg class="bi me-2" width="40" height="32"></svg>
-        <span href="index.php" class="fs-4 deco-text" ">Sino</span>
+      <i class="bi bi-sina-weibo mx-3"></i>
+        <span href="index.php" class="fs-2 deco-text" ">Sino</span>
       </a>
 
-      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+      <button class="navbar-toggler collapsed text-decoration-none" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <ul class="nav nav-pills ">
-        <li class="nav-item"><a href="/index.php" class="nav-link" aria-current="page" ">Strona Główna</a></li>
+        <li class="nav-item"><a href="/index.php" class="nav-link text-decoration-none" aria-current="page" style="color: black;">Strona Główna</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" ">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
             Dodaj
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/new-client.php" ">Nowy Klient</a></li>
-            <li><a class="dropdown-item" href="/new-employee.php" ">Nowy Pracownik</a></li>
+            <li><a class="dropdown-item" href="/new-client.php" style="color: black;">Nowy Klient</a></li>
+            <li><a class="dropdown-item" href="/new-employee.php" style="color: black;">Nowy Pracownik</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" ">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
             Widoki
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="company-oriented-view.php" ">Klienci</a></li>
-            <li><a class="dropdown-item" href="employee-oriented-view.php" ">Pracownicy</a></li>
+            <li><a class="dropdown-item" href="company-oriented-view.php" style="color: black;" >Klienci</a></li>
+            <li><a class="dropdown-item" href="employee-oriented-view.php" style="color: black;">Pracownicy</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a href="/plans.php" class="nav-link" ">Subskrypcje</a></li>
+        <li class="nav-item"><a href="/plans.php" class="nav-link" style="color: black;">Subskrypcje</a></li>
       </ul>
     </header>
   </div>

@@ -7,7 +7,7 @@
 <?php endif; ?>
 
 
-<div class="container col-md-7 col-lg-8">
+<div class="container ">
 
   <h4 class="mb-3">Wprowadź dane nowego klienta</h4>
 
@@ -66,10 +66,9 @@
           <option>pozostałe</option>
         </select>
       </div>
-
-
-
-      <button class="btn btn-primary btn-lg"  type="submit">Dodaj</button>
+      <div class="d-flex justify-content-center">
+        <button class="btn btn-dark btn-md mt-3" style="width:30vh;" type="submit">Dodaj</button>
+      </div>
 
       <hr class="my-4">
   </form>

@@ -1,8 +1,20 @@
+body {
+  background-color: rgba(183, 183, 183, 0.311);
+}
+
 
 main {
-  
   display: flex;
   min-height: 600px;
+  
+}
+
+header {
+  display:flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 5vh auto auto auto ;
+  background-color: rgba(167, 167, 167, 0.169);
 }
 
 
