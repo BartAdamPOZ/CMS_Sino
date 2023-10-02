@@ -34,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <?php  require 'includes/new-client-form.php'; ?>
 
 <div class="container table-responsive">
-  <h5>Wszyscy klienci</h5>
 
   <?php if (empty($companies)): ?>
 
@@ -45,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   <table id="companies-all" class="display">
     <thead>
 
-      <th>Nazwa</th>
+      <th>Nazwa Klienta</th>
       <th>Adres</th>
       <th>Sektor</th>
       <th>Plan</th>

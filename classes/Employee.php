@@ -97,7 +97,7 @@ class Employee
     {
         $sql = "SELECT *
                 FROM employees
-                ORDER BY name;";
+                GROUP BY employees.name";
 
         $results = $conn->query($sql);
 

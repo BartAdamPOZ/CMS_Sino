@@ -18,11 +18,12 @@ require 'includes/header.php';
 
 <?php else :?>
 
+  <h3 class="my-3" >Nasi Klienci</h3>
 
 <table class="display" id="company-oriented-table">
   <thead>
 
-    <th>Nazwa</th>
+    <th>Nazwa Klienta</th>
     <th>Adres</th>
     <th>Opiekunowie</th>
     <th>Plan</th>

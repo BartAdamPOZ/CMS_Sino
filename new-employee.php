@@ -37,46 +37,44 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
 <div class="container table-responsive">
-  
-    <h3>Wszyscy pracownicy:</h3>
-  
-    <?php if (empty($employees)): ?>
 
-    Nie odnaleziono pracowników.
+  <?php if (empty($employees)): ?>
 
-    <?php else :?>
+  Nie odnaleziono pracowników.
 
-    <table id="employee-table" class="display">
-      <thead>
+  <?php else :?>
 
-        <th>Imię i nazwisko</th>
-        <th>Email</th>
-        <th>Telefon</th>
-        <th>Stanowisko</th>
+  <table id="employee-table" class="display">
+    <thead>
 
-      </thead>
-      <tbody>
-        <?php foreach ($employees as $employee):?>
-          <tr>
-            <td>
-              <?= htmlspecialchars($employee['name']);?>
-            </td>
-            <td>
-              <?= htmlspecialchars($employee['email']);?>
-            </td>
-            <td>
-              <?= htmlspecialchars($employee['phone']);?>
-            </td>
-            <td>
-              <?= htmlspecialchars($employee['position']);?>
-            </td>
-          </tr>
-        <?php endforeach;?>
+      <th>Imię i nazwisko</th>
+      <th>Email</th>
+      <th>Telefon</th>
+      <th>Stanowisko</th>
+
+    </thead>
+    <tbody>
+      <?php foreach ($employees as $employee):?>
+      <tr>
+        <td>
+          <?= htmlspecialchars($employee['name']);?>
+        </td>
+        <td>
+          <?= htmlspecialchars($employee['email']);?>
+        </td>
+        <td>
+          <?= htmlspecialchars($employee['phone']);?>
+        </td>
+        <td>
+          <?= htmlspecialchars($employee['position']);?>
+        </td>
+      </tr>
+      <?php endforeach;?>
 
 
-      </tbody>
-    </table>
-    <?php endif;?>
+    </tbody>
+  </table>
+  <?php endif;?>
 </div>
 
 

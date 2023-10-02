@@ -111,7 +111,6 @@ $companyData = Company::getWithSupervisorsAndContactPersons($conn);
   </div>
 
   <div class="contact-table table-responsive">
-    <h5>Tabela z osobami do kontaktu</h5>
 
     <div>
       <?php if (empty($contactPersons)): ?>
@@ -122,7 +121,7 @@ $companyData = Company::getWithSupervisorsAndContactPersons($conn);
 
       <table id="contact-persons" class="display">
       <thead>
-          <th>Imię i nazwisko</th>
+          <th>Osoba do kontaktu</th>
           <th>Email</th>
           <th>Telefon</th>
 
@@ -153,7 +152,6 @@ $companyData = Company::getWithSupervisorsAndContactPersons($conn);
   </div>
 
   <div class="supervisor-table table-responsive">
-    <h5>Tabela z opiekunami</h5>
 
     <div>
       <?php if (empty($employees)): ?>
@@ -164,7 +162,7 @@ $companyData = Company::getWithSupervisorsAndContactPersons($conn);
 
       <table id="supervisors" class="display">
         <thead>
-          <th>Imię i nazwisko</th>
+          <th>Opiekun</th>
           <th>Email</th>
           <th>Telefon</th>
           <th>Stanowisko</th>
