@@ -7,7 +7,7 @@
 <?php endif; ?>
 
 
-<div class="container ">
+<div class="container d-flex col-md-7 col-lg-8" style="flex-direction:column;">
 
   <h4 class="mb-3">Wprowadź dane nowego klienta</h4>
 

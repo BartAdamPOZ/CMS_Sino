@@ -26,9 +26,8 @@
 <body>
 
   <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-4 mb-4">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-      <i class="bi bi-sina-weibo mx-3"></i>
+    <header class=" py-4 mb-4">
+      <a href="/" class="mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <span href="index.php" class="fs-2 deco-text" ">Sino</span>
       </a>
 

@@ -48,8 +48,9 @@
           </div>
         </div>
       </div>
-
-      <button class="btn btn-primary btn-lg" style="align-items: center;" type="submit">Dodaj</button>
+      <div class="d-flex justify-content-center">
+        <button class="btn btn-dark btn-md mt-3" style="width:30vh;" type="submit">Dodaj</button>
+      </div>
 
       <hr class="my-4">
   </form>

@@ -59,9 +59,11 @@ $companyData = Company::getWithSupervisorsAndContactPersons($conn);
 ?>
 
 <div class="container company-site">
-  <div class="item1">
+  <div class="item1 py-4">
     <?php if ($company): ?>
+
     <h4>O firmie:</h4>
+    <hr>
     <h5>Nazwa: <?= htmlspecialchars($company -> name); ?></h5>
     <p>Adres: <?= htmlspecialchars($company -> address); ?></p>
     <p>Sektor: <?= htmlspecialchars($company -> sector); ?></p>
@@ -69,18 +71,19 @@ $companyData = Company::getWithSupervisorsAndContactPersons($conn);
     <?php endif; ?>
   </div>
 
-  <div class="item2">
+  <div class="item2 py-4">
     <h5>Dodaj opiekuna</h5>
     <form method="post">
       <select name="supervisor" class="form-select" id="supervisor" required="">
         <option value="">Wybierz...</option>
-          <?php foreach ($employeesAll as $employee) : ?>
+        <?php foreach ($employeesAll as $employee) : ?>
         <option value="<?= $employee['id']?>" id="employee<?= $employee['id']?>">
           <?= htmlspecialchars($employee['name']) ?></option>
         <?php endforeach; ?>
       </select>
-
-      <button class="btn btn-sm btn-primary">Dodaj</button>
+      <div class="d-flex justify-content-center">
+        <button class="btn btn-md btn-dark mt-3">Dodaj</button>
+      </div>
     </form>
   </div>
 
@@ -111,7 +114,7 @@ $companyData = Company::getWithSupervisorsAndContactPersons($conn);
   </div>
 
   <div class="contact-table table-responsive">
-
+    <hr>
     <div>
       <?php if (empty($contactPersons)): ?>
 
@@ -120,7 +123,7 @@ $companyData = Company::getWithSupervisorsAndContactPersons($conn);
       <?php else :?>
 
       <table id="contact-persons" class="display">
-      <thead>
+        <thead>
           <th>Osoba do kontaktu</th>
           <th>Email</th>
           <th>Telefon</th>
@@ -145,14 +148,14 @@ $companyData = Company::getWithSupervisorsAndContactPersons($conn);
         </tbody>
       </table>
 
-      
+
       <?php endif;?>
     </div>
 
   </div>
 
   <div class="supervisor-table table-responsive">
-
+  <hr>
     <div>
       <?php if (empty($employees)): ?>
 

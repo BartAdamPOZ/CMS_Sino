@@ -11,9 +11,11 @@ main {
 
 header {
   display:flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
-  margin: 5vh auto auto auto ;
+  justify-content: center;
+  padding: 3vh 5vh 3vh 8vh;
+  margin: 5vh auto 3vh auto ;
   background-color: rgba(167, 167, 167, 0.169);
 }
 
@@ -44,12 +46,12 @@ header {
 
 .company-site {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.8fr 1fr 1fr;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 0.8fr auto auto;
   grid-template-areas:
-      "item1 item1 item3"
-      "contact-table contact-table item3"
-      "supervisor-table supervisor-table item2";
+      "item1 item3 item2"
+      "contact-table contact-table contact-table"
+      "supervisor-table supervisor-table supervisor-table";
   grid-gap: 1rem;
   border-radius: 1rem;
 
@@ -59,7 +61,7 @@ header {
   grid-area: item1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding-left: 5vh;
   background-color: rgba(167, 167, 167, 0.169);
 
 }
@@ -69,6 +71,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content:center;
   background-color: rgba(167, 167, 167, 0.169);
 
 }
@@ -78,6 +81,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2vh;
   background-color: rgba(167, 167, 167, 0.169);
 
 }
@@ -124,8 +128,31 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+  }
+
+  .btn-main {
+    padding: 50px 0 50px 0;
+    background-color: rgba(167, 167, 167, 0.169);
+  
+    width: 40vh;
   
   }
+  .company-site {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+        "item1"
+        "item3"
+        "item2"
+        "contact-table"
+        "supervisor-table";
+    grid-gap: 1rem;
+    border-radius: 1rem;
+  
+  }
+
+  
 
 }
 @media screen and (max-width: 768px) {
